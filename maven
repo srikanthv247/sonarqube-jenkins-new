@@ -1,0 +1,141 @@
+maven
+
+
+build tool
+
+
+1.we can install and uninstall certain packages and dependenices using some reference file
+
+java---maven Ant or gradle
+
+dotnet----Msbuild Visualstudio
+
+python ----PIP
+
+Nodejs----NPM
+
+dart----programming language for flutter
+flutter----same code mobile web and ios
+
+
+2. it will also compile the source code
+
+syntax errors-----it will identify the systax errors in compile stage
+
+3.tesings----unit tesings
+
+
+maven----unit testing and integration testing
+
+unit testing----small part of application
+integrating testing----all
+
+
+java----pom.xml ----project object model
+
+it is developed by developer
+
+
+what is maven build life cycle
+
+
+JDK ---Java development Kit
+
+apt install maven -y-----jdk21
+
+JDK----maven---Java applications compile
+
+
+mvn validate-----configuration check---pom.xml---it will check project structure
+mvn compile-----syntax errors----it will identify the syntax errors
+mvn test--------unit tesing----some unit test cases will run
+mvn package-----artifact----target floder----it will develop one artifact and artifact is nothing but war or jar 
+mvn verify------integration testing---all parts of application will test in this stage
+mvn install------local system project----.m2
+
+
+java project---github---aws server----maven
+jdk17
+
+
+jdk8
+jdk11
+jdk17
+jdk21
+
+maven--jdk21
+
+sudo apt search jdk
+
+
+java application management---tomcat
+
+
+java project----awsserver  ---install maven and jdk17----mvn package----tomcat----artifact
+
+
+naming convention of artifact
+ 
+artifact-ID-version,packaging
+
+
+artifact----working functionality of application
+
+
+deploying java application in tomcat
+
+wget tomcat9--link
+
+tar -xvf tomcat9
+
+mv oldname newname
+
+cp -r tomcat9 /opt
+
+cd /opt
+
+ls -l
+
+sudo chown -R ubuntu:ubuntu tomcat9
+
+cd /opt/tomcat
+
+ls -l
+
+cd javawebcalculator/target/
+
+pwd
+
+
+cp webapp-0.1.war /opt/tomcat9/webapps
+
+cd /opt/tomcat9/webapps
+
+sudo chmod 755 webapp-0.1.war
+
+cd ..
+
+cd /bin
+
+ls
+
+./startup.sh
+
+-------------------
+
+node.js ----we will deploy in server
+
+
+------------------------------------------
+
+deploying java application in dooker container
+
+install docker engine
+
+cat /etc/gshadow | grep docker
+
+usermod -aG docker ubuntu
+
+sudo newgrp docker
+
+
