@@ -1,0 +1,47 @@
+pipeline{
+    agent any
+  
+  stages{
+        stage ('clean Workspace'){
+            steps{
+                cleanWs()
+            }
+        }
+        stage ('checkout scm') {
+            steps {
+                git 'https://github.com/anji103/JavaWebCalculator.git'
+            }
+        }
+        stage ('maven validate'){
+            steps{
+                sh 'mvn validate'
+            }
+        }
+        stage ('maven compile'){
+            steps{
+              sh 'mvn compile'
+            }
+        }
+        stage ('maven test'){
+            steps{
+              sh 'mvn test'
+            }
+        }
+        stage ('maven package'){
+            steps{
+              sh 'mvn package'
+            }
+        }
+        stage ('maven verify'){
+            steps{
+              sh 'mvn verify'
+            }
+        }
+        stage ('maven install'){
+            steps{
+              sh 'mvn install'
+            }
+        }
+  
+    }
+}
