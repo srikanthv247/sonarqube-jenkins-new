@@ -1,0 +1,25 @@
+master slave 
+
+create and launch two instances - master  and slave 
+In  slave --
+apt update -y
+apt install maven -y
+apt install openjdk-11-jdk -y
+adduser slave(username)
+cd /etc/ssh --> vi sshd_config---> password authentication yes
+systemctl restart ssh
+cd /opt --> mkdir slavefile -->chown -R slave:slave slavefile
+
+In master
+apt update -y
+apt install maven -y
+apt install openjdk-11-jdk -y
+cd /etc/ssh --> vi sshd_config---> PasswordAuthentication yes
+systemctl restart ssh
+install jenkins using docker or normally
+in jenkins --> manage jenkins--> node --> new node -->slave(node name)-->create-->configure--> number of executors - 3, root directory--> /opt/slavefile ,host name -private IP of slave ,via SSH, give credentials(username and password is what you give in slave sever),
+no verfication--> save
+
+after launching node
+
+create one job(slave) with freestyle --> Restrict where this project can be run, build steps(excute shell --> echo "anji is selected in interview")
